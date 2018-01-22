@@ -182,17 +182,15 @@ bar {
 #######################################################################
 exec i3-config-wizard
 
-
 # Media settings
-bindsym XF86AudioPlay exec playerctl play
-bindsym XF86AudioPause exec playerctl pause
+bindsym XF86AudioPlay exec playerctl play-pause
 bindsym XF86AudioNext exec playerctl next
 bindsym XF86AudioPrev exec playerctl previous
 
 # Audio settings
 bindsym XF86AudioRaiseVolume exec amixer -c 0 set Master 10%+
 bindsym XF86AudioLowerVolume exec amixer -c 0 set Master 10%-
-bindsym XF86AudioMute exec amixer -q set Master toggle
+bindsym XF86AudioMute exec amixer -q -D pulse sset Master toggle
 
 
 bindsym Print exec scrot -u '%d_%m_%Y_%H_%M_%S.png' -e 'mv $f ~/Documents/Imagens'
